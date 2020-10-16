@@ -1,0 +1,21 @@
+.player {
+  margin: 10px 10px;
+  border: 1px solid grey;
+  padding-bottom: 10px;
+  position: relative;
+  text-align: center;
+  font-size: 24px;
+}
+
+.name {
+  margin: 10px 10px;
+  overflow-x: visible;
+  max-height: 1.1em;
+}
+
+.score {
+  text-align: center;
+  background: none;
+  border: 0px;
+  color: inherit;
+}

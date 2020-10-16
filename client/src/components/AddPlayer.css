@@ -1,0 +1,22 @@
+.add-player {
+  margin: 20px auto;
+  width: 30%;
+  font-size: 18px;
+}
+
+form {
+  display:block;
+  max-width: 120px;
+  text-align: center;
+}
+
+form > * {
+  margin: 10px auto;
+}
+
+input {
+  width: 100px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}

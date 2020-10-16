@@ -1,0 +1,288 @@
+{
+  "{\"filename\":\"/app/server/server.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],{\"loose\":false}],[[],{\"spec\":false,\"loose\":false}],[[],{\"spec\":false,\"loose\":false}],[[],{\"spec\":false,\"loose\":false}],[[],{\"spec\":false,\"loose\":false}],[[],{\"spec\":false,\"loose\":false}],[[],{\"spec\":false,\"loose\":false}],[[],{\"spec\":false,\"loose\":false}],[[],{\"spec\":false,\"loose\":false}],[[],{\"spec\":false,\"loose\":false}],[[],{\"spec\":false,\"loose\":false}],[[],{\"spec\":false,\"loose\":false}],[[],{\"spec\":false,\"loose\":false}],[[],{\"spec\":false,\"loose\":false}],[[],{\"spec\":false,\"loose\":false}],[[],{\"spec\":false,\"loose\":false}],[[],{\"spec\":false,\"loose\":false}],[[],{\"spec\":false,\"loose\":false}],[[],{\"spec\":false,\"loose\":false}],[[],{\"spec\":false,\"loose\":false}],[[],{\"spec\":false,\"loose\":false}],[[],{\"spec\":false,\"loose\":false}],[[],{\"spec\":false,\"loose\":false}],[[],{\"spec\":false,\"loose\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/server\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.3:development": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "express",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "express"
+              }
+            ]
+          },
+          {
+            "source": "path",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "path"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/server/server.js",
+      "filenameRelative": "/app/server/server.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "spec": false,
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "spec": false,
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "spec": false,
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "spec": false,
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "spec": false,
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "spec": false,
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "spec": false,
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "spec": false,
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "spec": false,
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "spec": false,
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "spec": false,
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "spec": false,
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "spec": false,
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "spec": false,
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "spec": false,
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "spec": false,
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "spec": false,
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "spec": false,
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "spec": false,
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "spec": false,
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "spec": false,
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "spec": false,
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "spec": false,
+            "loose": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "server.js",
+      "sourceFileName": "server.js",
+      "sourceRoot": "/app/server",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/server",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "server"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nvar _express = require('express');\n\nvar _express2 = _interopRequireDefault(_express);\n\nvar _path = require('path');\n\nvar _path2 = _interopRequireDefault(_path);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar app = (0, _express2.default)();\n\n// PWAs want HTTPS!\nfunction checkHttps(request, response, next) {\n  // Check the protocol — if http, redirect to https.\n  if (request.get(\"X-Forwarded-Proto\").indexOf(\"https\") != -1) {\n    return next();\n  } else {\n    response.redirect(\"https://\" + request.hostname + request.url);\n  }\n}\n\napp.all(\"*\", checkHttps);\n\n// A test route to make sure the server is up.\napp.get(\"/api/ping\", function (request, response) {\n  console.log(\"❇️ Received GET request to /api/ping\");\n  response.send(\"pong!\");\n});\n\n// Express port-switching logic\nvar port = void 0;\nconsole.log(\"❇️ NODE_ENV is\", process.env.NODE_ENV);\nif (process.env.NODE_ENV === \"production\") {\n  port = process.env.PORT || 3000;\n  app.use(_express2.default.static(_path2.default.join(__dirname, \"../build\")));\n  app.get(\"*\", function (request, response) {\n    response.sendFile(_path2.default.join(__dirname, \"../build\", \"index.html\"));\n  });\n} else {\n  port = 3001;\n  console.log(\"⚠️ Not seeing your changes as you develop?\");\n  console.log(\"⚠️ Do you need to set 'start': 'npm run development' in package.json?\");\n}\n\n// Start the listener!\nvar listener = app.listen(port, function () {\n  console.log(\"❇️ Express server is running on port\", listener.address().port);\n});\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNlcnZlci5qcyJdLCJuYW1lcyI6WyJhcHAiLCJjaGVja0h0dHBzIiwicmVxdWVzdCIsInJlc3BvbnNlIiwibmV4dCIsImdldCIsImluZGV4T2YiLCJyZWRpcmVjdCIsImhvc3RuYW1lIiwidXJsIiwiYWxsIiwiY29uc29sZSIsImxvZyIsInNlbmQiLCJwb3J0IiwicHJvY2VzcyIsImVudiIsIk5PREVfRU5WIiwiUE9SVCIsInVzZSIsImV4cHJlc3MiLCJzdGF0aWMiLCJwYXRoIiwiam9pbiIsIl9fZGlybmFtZSIsInNlbmRGaWxlIiwibGlzdGVuZXIiLCJsaXN0ZW4iLCJhZGRyZXNzIl0sIm1hcHBpbmdzIjoiOztBQUFBOzs7O0FBQ0E7Ozs7OztBQUVBLElBQU1BLE1BQU0sd0JBQVo7O0FBRUE7QUFDQSxTQUFTQyxVQUFULENBQW9CQyxPQUFwQixFQUE2QkMsUUFBN0IsRUFBdUNDLElBQXZDLEVBQTZDO0FBQzNDO0FBQ0EsTUFBSUYsUUFBUUcsR0FBUixDQUFZLG1CQUFaLEVBQWlDQyxPQUFqQyxDQUF5QyxPQUF6QyxLQUFxRCxDQUFDLENBQTFELEVBQTZEO0FBQzNELFdBQU9GLE1BQVA7QUFDRCxHQUZELE1BRU87QUFDTEQsYUFBU0ksUUFBVCxDQUFrQixhQUFhTCxRQUFRTSxRQUFyQixHQUFnQ04sUUFBUU8sR0FBMUQ7QUFDRDtBQUNGOztBQUVEVCxJQUFJVSxHQUFKLENBQVEsR0FBUixFQUFhVCxVQUFiOztBQUVBO0FBQ0FELElBQUlLLEdBQUosQ0FBUSxXQUFSLEVBQXFCLFVBQUNILE9BQUQsRUFBVUMsUUFBVixFQUF1QjtBQUMxQ1EsVUFBUUMsR0FBUixDQUFZLHNDQUFaO0FBQ0FULFdBQVNVLElBQVQsQ0FBYyxPQUFkO0FBQ0QsQ0FIRDs7QUFLQTtBQUNBLElBQUlDLGFBQUo7QUFDQUgsUUFBUUMsR0FBUixDQUFZLGdCQUFaLEVBQThCRyxRQUFRQyxHQUFSLENBQVlDLFFBQTFDO0FBQ0EsSUFBSUYsUUFBUUMsR0FBUixDQUFZQyxRQUFaLEtBQXlCLFlBQTdCLEVBQTJDO0FBQ3pDSCxTQUFPQyxRQUFRQyxHQUFSLENBQVlFLElBQVosSUFBb0IsSUFBM0I7QUFDQWxCLE1BQUltQixHQUFKLENBQVFDLGtCQUFRQyxNQUFSLENBQWVDLGVBQUtDLElBQUwsQ0FBVUMsU0FBVixFQUFxQixVQUFyQixDQUFmLENBQVI7QUFDQXhCLE1BQUlLLEdBQUosQ0FBUSxHQUFSLEVBQWEsVUFBQ0gsT0FBRCxFQUFVQyxRQUFWLEVBQXVCO0FBQ2xDQSxhQUFTc0IsUUFBVCxDQUFrQkgsZUFBS0MsSUFBTCxDQUFVQyxTQUFWLEVBQXFCLFVBQXJCLEVBQWlDLFlBQWpDLENBQWxCO0FBQ0QsR0FGRDtBQUdELENBTkQsTUFNTztBQUNMVixTQUFPLElBQVA7QUFDQUgsVUFBUUMsR0FBUixDQUFZLDRDQUFaO0FBQ0FELFVBQVFDLEdBQVIsQ0FDRSx1RUFERjtBQUdEOztBQUVEO0FBQ0EsSUFBTWMsV0FBVzFCLElBQUkyQixNQUFKLENBQVdiLElBQVgsRUFBaUIsWUFBTTtBQUN0Q0gsVUFBUUMsR0FBUixDQUFZLHNDQUFaLEVBQW9EYyxTQUFTRSxPQUFULEdBQW1CZCxJQUF2RTtBQUNELENBRmdCLENBQWpCIiwiZmlsZSI6InNlcnZlci5qcyIsInNvdXJjZVJvb3QiOiIvYXBwL3NlcnZlciIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBleHByZXNzIGZyb20gJ2V4cHJlc3MnO1xuaW1wb3J0IHBhdGggZnJvbSAncGF0aCc7XG5cbmNvbnN0IGFwcCA9IGV4cHJlc3MoKTtcblxuLy8gUFdBcyB3YW50IEhUVFBTIVxuZnVuY3Rpb24gY2hlY2tIdHRwcyhyZXF1ZXN0LCByZXNwb25zZSwgbmV4dCkge1xuICAvLyBDaGVjayB0aGUgcHJvdG9jb2wg4oCUIGlmIGh0dHAsIHJlZGlyZWN0IHRvIGh0dHBzLlxuICBpZiAocmVxdWVzdC5nZXQoXCJYLUZvcndhcmRlZC1Qcm90b1wiKS5pbmRleE9mKFwiaHR0cHNcIikgIT0gLTEpIHtcbiAgICByZXR1cm4gbmV4dCgpO1xuICB9IGVsc2Uge1xuICAgIHJlc3BvbnNlLnJlZGlyZWN0KFwiaHR0cHM6Ly9cIiArIHJlcXVlc3QuaG9zdG5hbWUgKyByZXF1ZXN0LnVybCk7XG4gIH1cbn1cblxuYXBwLmFsbChcIipcIiwgY2hlY2tIdHRwcyk7XG5cbi8vIEEgdGVzdCByb3V0ZSB0byBtYWtlIHN1cmUgdGhlIHNlcnZlciBpcyB1cC5cbmFwcC5nZXQoXCIvYXBpL3BpbmdcIiwgKHJlcXVlc3QsIHJlc3BvbnNlKSA9PiB7XG4gIGNvbnNvbGUubG9nKFwi4p2H77iPIFJlY2VpdmVkIEdFVCByZXF1ZXN0IHRvIC9hcGkvcGluZ1wiKTtcbiAgcmVzcG9uc2Uuc2VuZChcInBvbmchXCIpO1xufSk7XG5cbi8vIEV4cHJlc3MgcG9ydC1zd2l0Y2hpbmcgbG9naWNcbmxldCBwb3J0O1xuY29uc29sZS5sb2coXCLinYfvuI8gTk9ERV9FTlYgaXNcIiwgcHJvY2Vzcy5lbnYuTk9ERV9FTlYpO1xuaWYgKHByb2Nlc3MuZW52Lk5PREVfRU5WID09PSBcInByb2R1Y3Rpb25cIikge1xuICBwb3J0ID0gcHJvY2Vzcy5lbnYuUE9SVCB8fCAzMDAwO1xuICBhcHAudXNlKGV4cHJlc3Muc3RhdGljKHBhdGguam9pbihfX2Rpcm5hbWUsIFwiLi4vYnVpbGRcIikpKTtcbiAgYXBwLmdldChcIipcIiwgKHJlcXVlc3QsIHJlc3BvbnNlKSA9PiB7XG4gICAgcmVzcG9uc2Uuc2VuZEZpbGUocGF0aC5qb2luKF9fZGlybmFtZSwgXCIuLi9idWlsZFwiLCBcImluZGV4Lmh0bWxcIikpO1xuICB9KTtcbn0gZWxzZSB7XG4gIHBvcnQgPSAzMDAxO1xuICBjb25zb2xlLmxvZyhcIuKaoO+4jyBOb3Qgc2VlaW5nIHlvdXIgY2hhbmdlcyBhcyB5b3UgZGV2ZWxvcD9cIik7XG4gIGNvbnNvbGUubG9nKFxuICAgIFwi4pqg77iPIERvIHlvdSBuZWVkIHRvIHNldCAnc3RhcnQnOiAnbnBtIHJ1biBkZXZlbG9wbWVudCcgaW4gcGFja2FnZS5qc29uP1wiXG4gICk7XG59XG5cbi8vIFN0YXJ0IHRoZSBsaXN0ZW5lciFcbmNvbnN0IGxpc3RlbmVyID0gYXBwLmxpc3Rlbihwb3J0LCAoKSA9PiB7XG4gIGNvbnNvbGUubG9nKFwi4p2H77iPIEV4cHJlc3Mgc2VydmVyIGlzIHJ1bm5pbmcgb24gcG9ydFwiLCBsaXN0ZW5lci5hZGRyZXNzKCkucG9ydCk7XG59KTtcbiJdfQ==",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "server.js"
+      ],
+      "names": [
+        "app",
+        "checkHttps",
+        "request",
+        "response",
+        "next",
+        "get",
+        "indexOf",
+        "redirect",
+        "hostname",
+        "url",
+        "all",
+        "console",
+        "log",
+        "send",
+        "port",
+        "process",
+        "env",
+        "NODE_ENV",
+        "PORT",
+        "use",
+        "express",
+        "static",
+        "path",
+        "join",
+        "__dirname",
+        "sendFile",
+        "listener",
+        "listen",
+        "address"
+      ],
+      "mappings": ";;AAAA;;;;AACA;;;;;;AAEA,IAAMA,MAAM,wBAAZ;;AAEA;AACA,SAASC,UAAT,CAAoBC,OAApB,EAA6BC,QAA7B,EAAuCC,IAAvC,EAA6C;AAC3C;AACA,MAAIF,QAAQG,GAAR,CAAY,mBAAZ,EAAiCC,OAAjC,CAAyC,OAAzC,KAAqD,CAAC,CAA1D,EAA6D;AAC3D,WAAOF,MAAP;AACD,GAFD,MAEO;AACLD,aAASI,QAAT,CAAkB,aAAaL,QAAQM,QAArB,GAAgCN,QAAQO,GAA1D;AACD;AACF;;AAEDT,IAAIU,GAAJ,CAAQ,GAAR,EAAaT,UAAb;;AAEA;AACAD,IAAIK,GAAJ,CAAQ,WAAR,EAAqB,UAACH,OAAD,EAAUC,QAAV,EAAuB;AAC1CQ,UAAQC,GAAR,CAAY,sCAAZ;AACAT,WAASU,IAAT,CAAc,OAAd;AACD,CAHD;;AAKA;AACA,IAAIC,aAAJ;AACAH,QAAQC,GAAR,CAAY,gBAAZ,EAA8BG,QAAQC,GAAR,CAAYC,QAA1C;AACA,IAAIF,QAAQC,GAAR,CAAYC,QAAZ,KAAyB,YAA7B,EAA2C;AACzCH,SAAOC,QAAQC,GAAR,CAAYE,IAAZ,IAAoB,IAA3B;AACAlB,MAAImB,GAAJ,CAAQC,kBAAQC,MAAR,CAAeC,eAAKC,IAAL,CAAUC,SAAV,EAAqB,UAArB,CAAf,CAAR;AACAxB,MAAIK,GAAJ,CAAQ,GAAR,EAAa,UAACH,OAAD,EAAUC,QAAV,EAAuB;AAClCA,aAASsB,QAAT,CAAkBH,eAAKC,IAAL,CAAUC,SAAV,EAAqB,UAArB,EAAiC,YAAjC,CAAlB;AACD,GAFD;AAGD,CAND,MAMO;AACLV,SAAO,IAAP;AACAH,UAAQC,GAAR,CAAY,4CAAZ;AACAD,UAAQC,GAAR,CACE,uEADF;AAGD;;AAED;AACA,IAAMc,WAAW1B,IAAI2B,MAAJ,CAAWb,IAAX,EAAiB,YAAM;AACtCH,UAAQC,GAAR,CAAY,sCAAZ,EAAoDc,SAASE,OAAT,GAAmBd,IAAvE;AACD,CAFgB,CAAjB",
+      "file": "server.js",
+      "sourceRoot": "/app/server",
+      "sourcesContent": [
+        "import express from 'express';\nimport path from 'path';\n\nconst app = express();\n\n// PWAs want HTTPS!\nfunction checkHttps(request, response, next) {\n  // Check the protocol — if http, redirect to https.\n  if (request.get(\"X-Forwarded-Proto\").indexOf(\"https\") != -1) {\n    return next();\n  } else {\n    response.redirect(\"https://\" + request.hostname + request.url);\n  }\n}\n\napp.all(\"*\", checkHttps);\n\n// A test route to make sure the server is up.\napp.get(\"/api/ping\", (request, response) => {\n  console.log(\"❇️ Received GET request to /api/ping\");\n  response.send(\"pong!\");\n});\n\n// Express port-switching logic\nlet port;\nconsole.log(\"❇️ NODE_ENV is\", process.env.NODE_ENV);\nif (process.env.NODE_ENV === \"production\") {\n  port = process.env.PORT || 3000;\n  app.use(express.static(path.join(__dirname, \"../build\")));\n  app.get(\"*\", (request, response) => {\n    response.sendFile(path.join(__dirname, \"../build\", \"index.html\"));\n  });\n} else {\n  port = 3001;\n  console.log(\"⚠️ Not seeing your changes as you develop?\");\n  console.log(\n    \"⚠️ Do you need to set 'start': 'npm run development' in package.json?\"\n  );\n}\n\n// Start the listener!\nconst listener = app.listen(port, () => {\n  console.log(\"❇️ Express server is running on port\", listener.address().port);\n});\n"
+      ]
+    },
+    "mtime": 1601272586000
+  }
+}

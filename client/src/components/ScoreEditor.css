@@ -1,0 +1,14 @@
+.scores {
+  margin: auto;
+  max-width: 800px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.push-updates {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}

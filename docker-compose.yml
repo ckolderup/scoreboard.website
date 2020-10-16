@@ -1,0 +1,32 @@
+version: "3.3"
+
+services:
+  api:
+    build: ./server
+    ports:
+      - "8080:8080"
+    links:
+      - redis
+    depends_on:
+      - redis
+    environment:
+      - PORT=8080
+  client:
+    build: ./client
+    ports:
+      - "3000:3000"
+    volumes:
+      - './client:/app'
+      - '/app/node_modules'
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    links:
+      - api
+    depends_on:
+      - api
+    stdin_open: true
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+
