@@ -8,7 +8,7 @@ import bodyParser from "body-parser";
 
 const app = express();
 
-const redisClient = redis.createClient('6379', 'redis');
+const redisClient = redis.createClient(process.env.REDIS_PORT, process.env.REDIS_HOST);
 redisClient.on("error", (e) => console.error(e));
 
 const server = http.createServer(app);

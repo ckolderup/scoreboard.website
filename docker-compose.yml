@@ -10,6 +10,8 @@ services:
     depends_on:
       - redis
     environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
       - PORT=3005
       - NODE_PATH=/app
   client:
@@ -22,6 +24,8 @@ services:
     environment:
       - CHOKIDAR_USEPOLLING=true
       - NODE_PATH=/app
+      - SERVER_HOST=server
+      - SERVER_PORT=3005
     links:
       - server
     depends_on:
