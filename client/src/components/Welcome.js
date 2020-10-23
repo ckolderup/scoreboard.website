@@ -19,26 +19,30 @@ export default function Welcome() {
     setRoom(e.target.value);
   }
 
-  function goToRoom(e) {
-    e.preventDefault();
-
-    console.log('okay i will!');
+  function editRoom(room) {
     history.push(`/room/${ room }/edit`);
+  }
+
+  function viewRoom(room) {
+    history.push(`/room/${room}`);
   }
 
   return (
     <div className="welcome">
       <h1>Hello</h1>
-      <div className="welcome-text">Join a room... if you dare! *spooky ghost noises*</div>
-      <form className="join-room" target="_blank" onSubmit={goToRoom}>
+      <div className="welcome-text">
+        Join a room... if you dare! *spooky ghost noises*
+      </div>
+      <div className="join-room">
         <input
           type="text"
           placeholder="Room name"
           onChange={updateRoom}
           defaultValue={room}
         ></input>
-        <button type="submit">Join</button>
-      </form>
+        <button onClick={() => {editRoom(room)}}>Edit</button>
+        <button onClick={() => {viewRoom(room)}}>View</button>
+      </div>
     </div>
   );
 }

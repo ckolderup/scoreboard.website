@@ -1,10 +1,17 @@
 .player {
+  width: 200px;
+  height: 285px;
   margin: 10px 10px;
-  border: 1px solid grey;
   padding-bottom: 10px;
   position: relative;
   text-align: center;
   font-size: 24px;
+  border: none;
+}
+
+.edit-avatar {
+  width: 150px;
+  height: 150px;
 }
 
 .trash-button {

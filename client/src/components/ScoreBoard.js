@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { Flipper, Flipped } from "react-flip-toolkit";
 import PlayerDisplay from "./PlayerDisplay.js";
 import {
   connectSocket,
   disconnectSocket,
   listenForChanges
 } from "../lib/socket.js";
+
 
 import "./ScoreBoard.css";
 
@@ -45,15 +47,14 @@ export default function ScoreBoard() {
   return (
     <div className="scoreboard">
       <h1>Scores</h1>
-      <div className="scores">
+      <Flipper spring="gentle" staggerConfig={{speed: .5}} className="scores" flipKey={players.map((x) => x.name).join("")}>
         {players.map((player) => (
-          <PlayerDisplay
-            key={player.name}
-            name={player.name}
-            score={player.score}
-          />
+          <Flipped key={player.name} flipId={player.name}>
+            <PlayerDisplay {...player}
+            />
+          </Flipped>
         ))}
-      </div>
+      </Flipper>
     </div>
   );
 }

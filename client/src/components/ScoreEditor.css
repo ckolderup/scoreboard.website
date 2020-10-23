@@ -1,14 +1,14 @@
-.scores {
+.score-edits {
   margin: auto;
-  max-width: 800px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
-.push-updates {
+.actions {
   position: absolute;
   right: 20px;
   top: 20px;
 }
+

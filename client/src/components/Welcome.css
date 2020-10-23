@@ -1,17 +1,21 @@
-.welcome, .join-room {
+.welcome .join-room {
   width: 600px;
   max-width: none;
   margin: 20px auto;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
 }
 
 .join-room input {
-  width: 75%;
+  width: 50%;
   float: left;
   font-weight: normal;
+  overflow: auto;
 }
 
 .join-room button {
-  width: 15%;
+  width: 25%;
   font-size: 18px;
   float: right;
   overflow: hidden;
