@@ -1,8 +1,11 @@
 import { useInput } from "../hooks/input-hook";
+import PropTypes from 'prop-types';
 import React from "react";
 import "./AddPlayer.css";
 
-export default function AddPlayer({ players, onSubmit }) {
+const AddPlayer = (props) => {
+
+  const { players, onSubmit } = props;
   const { value, bind, reset } = useInput("");
 
   function addPlayer(e) {
@@ -19,5 +22,12 @@ export default function AddPlayer({ players, onSubmit }) {
       <input type="text" placeholder="Name" {...bind}></input>
       <button type="submit">Go</button>
     </form>
-  );
+  )
 }
+
+AddPlayer.propType = {
+  players: PropTypes.array.isRequired,
+  onSubmit: PropTypes.func.isRequired
+}
+
+export default AddPlayer;

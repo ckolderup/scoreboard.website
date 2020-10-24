@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./App.css";
 
@@ -34,10 +34,18 @@ export default function App() {
       <div className={"App darkmode-" + darkMode}>
         <Router>
           <Switch>
-            <Route exact path="/" children={<Welcome />} />
-            <Route path="/room/:roomId/edit" children={<ScoreEditor />} />
-            <Route path="/room/:roomId" children={<ScoreBoard />} />
-            <Route children={<NotFound />} />
+            <Route exact path="/">
+              <Welcome />
+            </Route>
+            <Route path="/room/:roomId/edit">
+              <ScoreEditor />
+            </Route>
+            <Route path="/room/:roomId">
+              <ScoreBoard />
+            </Route>
+            <Route>
+              <NotFound />
+            </Route>
           </Switch>
         </Router>
       </div>

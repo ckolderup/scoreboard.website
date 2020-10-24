@@ -15,7 +15,7 @@ export default function ScoreBoard() {
   let { roomId } = useParams();
 
   const [players, setPlayers] = useState([]);
-  const [room, setRoom] = useState(roomId);
+  const [room] = useState(roomId);
 
   useEffect(() => {
     if (room)

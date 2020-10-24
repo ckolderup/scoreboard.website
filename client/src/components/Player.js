@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import "./Player.css";
 
 export default function Player({name, startScore, avi, setScore, setAvatar, removePlayer}) {

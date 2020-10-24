@@ -11,7 +11,7 @@ export default function ScoreEditor() {
 	let { roomId } = useParams();
 
   const [players, setPlayers] = useState([]);
-  const [room, setRoom] = useState(roomId);
+  const [room] = useState(roomId);
 
   useEffect(() => {
     if (room) connectSocket(room, (err, data) => {
@@ -40,7 +40,6 @@ export default function ScoreEditor() {
       method: 'post',
       body: JSON.stringify(players)
     }).then(res => res.json())
-    .then((data) => { })
     .catch((e) => {
       console.log(e);
     })
