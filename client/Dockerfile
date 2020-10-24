@@ -7,7 +7,7 @@ COPY package-lock.json /app
 
 RUN npm ci
 
-COPY . .
+COPY . /app
 
 CMD ["npm", "start"]
 
