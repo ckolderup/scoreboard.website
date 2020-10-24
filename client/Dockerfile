@@ -7,9 +7,7 @@ COPY package-lock.json /app
 
 RUN npm ci
 
-COPY . /app
-
-RUN npm install
+COPY . .
 
 CMD ["npm", "start"]
 
