@@ -5,10 +5,6 @@ import redis from "redis";
 import friendlyWords from "friendly-words";
 import bodyParser from "body-parser";
 
-import getPresignedUploadUrl from 'lib/upload.js';
-
-const S3_BUCKET = process.env.S3_BUCKET;
-
 const app = express();
 
 const redisClient = redis.createClient(process.env.REDIS_PORT, process.env.REDIS_HOST);
@@ -60,10 +56,6 @@ app.post("/api/scores/:room", (req, res) => {
   );
   io.to(`${req.params.room}-board`).emit("current", req.body);
   res.send('{"ok": true}');
-});
-
-app.get("/api/image/upload-url", (req, res) => {
-  res.send(`{"url": "${getPresignedUploadUrl(S3_BUCKET, 'player-avatars')}"}`);
 });
 
 io.on("connect", (socket) => {
