@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Player from "./Player.js";
+import EditablePlayer from "./EditablePlayer.js";
 import AddPlayer from  "./AddPlayer.js";
 import { connectSocket, disconnectSocket, listenForChanges, sendScores } from "../lib/socket.js";
 
-import "./ScoreEditor.css";
-import Random from "../lib/random.js";
+import "./EditableScoreBoard.css";
 
-export default function ScoreEditor() {
+export default function EditableScoreBoard() {
 	let { roomId } = useParams();
 
   const [players, setPlayers] = useState([]);
@@ -75,11 +74,11 @@ export default function ScoreEditor() {
     }
   }
 
-  function randomizeAvatar(name) {
+  function changeAvatar(name, url) {
     const player = players.find(p => p.name === name)
 
     if (player !== undefined) {
-      player.avi = `http://www.avatarpro.biz/avatar/${Random.generateHash()}?s=150`;
+      player.avi = url;
       pushPlayers(players);
     }
   }
@@ -93,14 +92,14 @@ export default function ScoreEditor() {
       <h1>Scores</h1>
       <div className="score-edits">
         {players.map((player) => (
-          <Player
+          <EditablePlayer
             key={player.name}
             removePlayer={() => removePlayer(player.name)}
             name={player.name}
             avi={player.avi}
             startScore={player.score}
             setScore={(score) => setScore(player.name, score)}
-            setAvatar={() => randomizeAvatar(player.name)}
+            setAvatar={(url) => changeAvatar(player.name, url)}
           />
         ))}
       </div>

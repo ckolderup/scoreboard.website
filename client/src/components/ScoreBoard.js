@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Flipper, Flipped } from "react-flip-toolkit";
-import PlayerDisplay from "./PlayerDisplay.js";
+import Player from "./Player.js";
 import {
   connectSocket,
   disconnectSocket,
@@ -50,8 +50,7 @@ export default function ScoreBoard() {
       <Flipper spring="gentle" staggerConfig={{speed: .5}} className="scores" flipKey={players.map((x) => x.name).join("")}>
         {players.map((player) => (
           <Flipped key={player.name} flipId={player.name}>
-            <PlayerDisplay {...player}
-            />
+            <Player {...player} />
           </Flipped>
         ))}
       </Flipper>

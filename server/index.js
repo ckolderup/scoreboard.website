@@ -1,10 +1,13 @@
 import express from "express";
-import path from "path";
 import socketIo from "socket.io";
 import http from "http";
 import redis from "redis";
 import friendlyWords from "friendly-words";
 import bodyParser from "body-parser";
+
+import getPresignedUploadUrl from 'lib/upload.js';
+
+const S3_BUCKET = process.env.S3_BUCKET;
 
 const app = express();
 
@@ -59,6 +62,10 @@ app.post("/api/scores/:room", (req, res) => {
   res.send('{"ok": true}');
 });
 
+app.get("/api/image/upload-url", (req, res) => {
+  res.send(`{"url": "${getPresignedUploadUrl(S3_BUCKET, 'player-avatars')}"}`);
+});
+
 io.on("connect", (socket) => {
   //socket.on("disconnect", () => { })
 
@@ -80,3 +87,4 @@ io.on("connect", (socket) => {
 const listener = server.listen(process.env.PORT || 8080, function () {
   console.log("Your app is listening on port " + listener.address().port);
 });
+
