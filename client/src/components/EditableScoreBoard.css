@@ -12,3 +12,17 @@
   top: 20px;
 }
 
+.background-color, .background-pattern {
+  padding: 20px;
+}
+
+.page-style {
+  margin: auto;
+  width: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+
+}

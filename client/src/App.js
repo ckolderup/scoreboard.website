@@ -1,37 +1,36 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
-import "./App.css";
+import { createGlobalStyle } from "styled-components";
 
 import ScoreBoard from "./components/ScoreBoard.js";
 import EditableScoreBoard from "./components/EditableScoreBoard.js";
 import Welcome from "./components/Welcome.js";
 import NotFound from "./components/NotFound.js";
 
-export default function App() {
-  const [darkMode, setDarkMode] = useState(true);
-
-  function toggleDarkMode() {
-    setDarkMode(!darkMode);
-  }
-
-  useEffect(() => {
-    if (darkMode) {
-      document.body.style.backgroundColor = "#222";
-    } else {
-      document.body.style.backgroundColor = "#eee";
+const GlobalStyle = createGlobalStyle`
+    body {
+      font-size: 24px;
+      color: #fff;
+      background-color: #222;
     }
-  }, [darkMode]);
 
+    h1, h2 {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 64px;
+    }
+
+    h2 {
+      font-size: 32px;
+    }
+  `;
+
+export default function App() {
   return (
     <div>
-      <div
-        className={"mode-toggle darkmode-" + darkMode}
-        onClick={toggleDarkMode}
-      >
-        ☀
-      </div>
-      <div className={"App darkmode-" + darkMode}>
+      <div className="App">
         <Router>
           <Switch>
             <Route exact path="/">
@@ -48,6 +47,7 @@ export default function App() {
             </Route>
           </Switch>
         </Router>
+        <GlobalStyle />
       </div>
     </div>
   );

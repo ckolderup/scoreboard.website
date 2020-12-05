@@ -11,7 +11,10 @@ const redisClient = redis.createClient(process.env.REDIS_PORT, process.env.REDIS
 redisClient.on("error", (e) => console.error(e));
 
 const server = http.createServer(app);
-const io = socketIo(server);
+const io = socketIo(server, {
+  transports: ['polling'],
+  allowUpgrades: false
+});
 
 app.use(
   express.json({
@@ -39,7 +42,7 @@ app.get("/api/random-room", (req, res) => {
   });
 });
 
-app.get("/api/scores/:room", (req, res) => {
+app.get("/api/state/:room", (req, res) => {
   redisClient.get(req.params.room, (err, reply) => {
     if (err) console.error(err);
 
@@ -47,7 +50,7 @@ app.get("/api/scores/:room", (req, res) => {
   });
 });
 
-app.post("/api/scores/:room", (req, res) => {
+app.post("/api/state/:room", (req, res) => {
   redisClient.set(
     `${req.params.room}-board`,
     JSON.stringify(req.body),
@@ -59,7 +62,7 @@ app.post("/api/scores/:room", (req, res) => {
 });
 
 io.on("connect", (socket) => {
-  //socket.on("disconnect", () => { })
+  socket.on("disconnect", () => { })
 
   socket.on("join", (room) => {
     socket.join(room);
@@ -70,9 +73,9 @@ io.on("connect", (socket) => {
   });
 
   socket.on("change", (data) => {
-    const { players, room } = data;
-    redisClient.set(room, JSON.stringify(players), "EX", 60 * 60 * 24);
-    io.to(room).emit("change", players);
+    const { state, room } = data;
+    redisClient.set(room, JSON.stringify(state), "EX", 60 * 60 * 24);
+    io.to(room).emit("change", state);
   });
 });
 
