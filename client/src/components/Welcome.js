@@ -29,9 +29,11 @@ export default function Welcome() {
 
   return (
     <div className="welcome">
-      <h1>Hello</h1>
+      <h1>scoreboard.website</h1>
       <div className="welcome-text">
-        Join a room... if you dare! *spooky ghost noises*
+        Welcome! Choose a scoreboard below by entering a name. All scoreboards
+        are deleted after 24 hours of inactivity. If you come across a board
+        that's already in use, be a dear and just try a new name.
       </div>
       <div className="join-room">
         <input
