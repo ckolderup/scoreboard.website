@@ -9,6 +9,11 @@ import patterns from '../lib/heropatterns';
 
 import "./EditableScoreBoard.css";
 
+// LMAOOOOOOOOOOO
+Number.prototype.mod = function (n) {
+  return ((this % n) + n) % n;
+};
+
 function pickFontColor(rgb) {
   const yiq = (rgb.r * 299 + rgb.g * 587 + rgb.b * 114) / 1000;
   return (yiq >= 128) ? 'black' : 'white'
@@ -84,7 +89,7 @@ export default function EditableScoreBoard() {
 
   function nextBackgroundPattern(e) {
     e.preventDefault();
-    const newIndex = (pageStyle.backgroundImage.index + 1) % patterns.length;
+    const newIndex = (pageStyle.backgroundImage.index + 1).mod(patterns.length);
     sendChanges(room, players, {
       ...pageStyle, backgroundImage: {
         index: newIndex,
@@ -95,7 +100,7 @@ export default function EditableScoreBoard() {
 
   function previousBackgroundPattern(e) {
     e.preventDefault();
-    const newIndex = (pageStyle.backgroundImage.index - 1) % patterns.length;
+    const newIndex = (pageStyle.backgroundImage.index - 1).mod(patterns.length);
     sendChanges(room, players, {
       ...pageStyle, backgroundImage: {
         index: newIndex,
