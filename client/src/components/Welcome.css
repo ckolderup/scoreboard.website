@@ -1,7 +1,9 @@
-.welcome .join-room {
+.welcome * {
   width: 600px;
-  max-width: none;
   margin: 20px auto;
+}
+
+.welcome .join-room {
   display: flex;
   flex-wrap: nowrap;
   align-items: stretch;
@@ -19,4 +21,10 @@
   font-size: 18px;
   float: right;
   overflow: hidden;
+}
+
+.credits {
+  margin: 60px auto;
+  font-size: 14px;
+  text-align: center;
 }

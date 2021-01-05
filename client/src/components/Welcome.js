@@ -33,7 +33,7 @@ export default function Welcome() {
       <div className="welcome-text">
         Welcome! Choose a scoreboard below by entering a name. All scoreboards
         are deleted after 24 hours of inactivity. If you come across a board
-        that's already in use, be a dear and just try a new name.
+        that&apos;s already in use, be a dear and just try a new name.
       </div>
       <div className="join-room">
         <input
@@ -44,6 +44,10 @@ export default function Welcome() {
         ></input>
         <button onClick={() => {editRoom(room)}}>Edit</button>
         <button onClick={() => {viewRoom(room)}}>View</button>
+      </div>
+
+      <div className="credits">
+        This is a project by <a href="https://casey.kolderup.org">Casey</a>.
       </div>
     </div>
   );
